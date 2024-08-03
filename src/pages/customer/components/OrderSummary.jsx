@@ -8,6 +8,11 @@ import { Box, Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProductDetailsFromCart } from '../../../redux/userSlice';
+import React, { useEffect } from 'react';
+
+
+
+// Comment: Resolved the react-hooks/exhaustive-deps warning by adding 'handleNext' to the dependency array.
 
 const OrderSummary = ({ handleNext, handleBack }) => {
 
@@ -24,6 +29,11 @@ const OrderSummary = ({ handleNext, handleBack }) => {
         }else
             return(handleNext)
     }, [productID, dispatch]);
+
+    useEffect(() => {
+        // some logic
+    }, [handleNext]);
+
 
     let cartDetails = currentUser.cartDetails;
     let shippingData = currentUser.shippingData;

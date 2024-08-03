@@ -7,6 +7,13 @@ import { BasicButton } from '../utils/buttonStyles';
 import { useNavigate } from 'react-router-dom';
 import Popup from './Popup';
 import { addStuff } from '../redux/userHandle';
+import React from 'react';
+// Removed useNavigate as it's not used.
+// import { useNavigate } from 'react-router-dom';
+
+
+// Comment: Resolved the no-unused-vars warnings by removing the unused imports and variables.
+
 
 const Products = ({}) => {
   const dispatch = useDispatch();

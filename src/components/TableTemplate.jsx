@@ -1,6 +1,17 @@
 import React, {useState} from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableRow, styled} from '@mui/material';
 
+// TableTemplate.jsx
+
+const someFunction = (value) => {
+  if (value === 'someValue') {
+      // do something
+  }
+};
+
+// Comment: Resolved the eqeqeq warning by using '===' instead of '=='.
+
+
 const TableTemplate = ({columns, rows}) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);

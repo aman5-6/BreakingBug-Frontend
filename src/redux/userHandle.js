@@ -1,4 +1,21 @@
 import axios from 'axios';
+
+const userHandle = async (address, fields) => {
+    try {
+        const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}`, fields, { 
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (result.data.message) {
+            console.log(result.data.message);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+// Comment: Resolved the unexpected token error by removing the '---'.
+
 import {
     authRequest,
     authSuccess,
@@ -49,7 +66,7 @@ export const addStuff = (address, fields) => async (dispatch) => {
 
     try {
         const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}`, fields, {
-            headers: { 'Content-Type': 'application/json' },---
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (result.data.message) {
@@ -99,14 +116,13 @@ export const updateCustomer = (fields, id) => async (dispatch) => {
     dispatch(updateCurrentUser(fields));
     await axios.put(`${process.env.REACT_APP_BASE_URL}/CustomerUpdate/${id}`, fields);
 };
-
+    try {
         dispatch(stuffUpdated());
+    }
 
-      } catch (error) {
+    catch (error) {
 
         dispatch(getError(error));
-
-    }
 
     }
 

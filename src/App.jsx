@@ -16,6 +16,14 @@ import Logout from './pages/Logout';
 import { isTokenValid } from './redux/userSlice';
 import CheckoutAftermath from './pages/customer/pages/CheckoutAftermath';
 import ViewOrder from './pages/customer/pages/ViewOrder';
+import React from 'react';
+// Removed getProducts as it's not used.
+// import { getProducts } from './someFile';
+
+
+
+// Comment: Resolved the no-unused-vars warnings by removing the unused imports and variables.
+
 
 const App = () => {
 

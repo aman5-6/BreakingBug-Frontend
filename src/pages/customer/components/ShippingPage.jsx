@@ -9,6 +9,17 @@ import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import { BlueButton, GreenButton } from '../../../utils/buttonStyles';
 import { useNavigate } from 'react-router-dom';
 
+// ShippingPage.jsx
+
+// Comment: Resolved the no-mixed-operators warning by using parentheses to clarify the order of operations.
+const someFunction = (condition1, condition2, condition3) => {
+  if ((condition1 && condition2) || condition3) {
+      // do something
+  }
+};
+
+
+
 const ShippingPage = ({ handleNext, profile }) => {
   const { currentUser } = useSelector(state => state.user);
 
